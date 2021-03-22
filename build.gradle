@@ -1,0 +1,24 @@
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+def junitVersion = "5.7.0"
+
+dependencies {
+    implementation "org.aeonbits.owner:owner:1.0.12"
+    testImplementation(
+            "org.junit.jupiter:junit-jupiter-api:$junitVersion",
+            "com.codeborne:selenide:5.19.0",
+            "org.assertj:assertj-core:3.19.0"
+    )
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+}
+
+test {
+    useJUnitPlatform()
+    systemProperties(System.getProperties())
+}
