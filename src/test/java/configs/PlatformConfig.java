@@ -13,7 +13,4 @@ public interface PlatformConfig extends Config {
 
     @Key("remoteWebDriver")
     String getRemoteWebDriver();
-
-    @Key("videoStorage")
-    String getVideoStorage();
 }
